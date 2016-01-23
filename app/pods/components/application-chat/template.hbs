@@ -1,0 +1,61 @@
+<div class="container clearfix">
+  <div class="people-list" id="people-list">
+    <ul class="list">
+      <h3>Galera do GDG: </h3>
+      {{#each model.users as |user|}}
+        <li class="clearfix">
+          <div class="about">
+            <div class="name">{{user.name}}</div>
+            <div class="name">{{user.email}}</div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="chat">
+    <div class="chat-header clearfix">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+
+      <div class="chat-about">
+        <div class="chat-with">{{model.currentUser.name}}</div>
+        <div class="chat-num-messages">BEM VINDO</div>
+      </div>
+      <i class="fa fa-star"></i>
+    </div>
+
+    <div class="chat-history">
+      <ul>
+        {{#each model.messages as |message|}}
+          {{#if message.isMyMessage}}
+            <li class="clearfix">
+              <div class="message-data align-right">
+                <span class="message-data-time">{{moment-from-now message.created}}</span> &nbsp; &nbsp;
+                <span class="message-data-name">{{message.user.name}}</span> <i class="fa fa-circle me"></i>
+
+              </div>
+              <div class="message other-message float-right">
+                {{message.body}}
+              </div>
+            </li>
+          {{else}}
+            <li>
+              <div class="message-data">
+                <span class="message-data-name"><i class="fa fa-circle online"></i> {{message.user.name}}</span>
+                <span class="message-data-time">{{moment-from-now message.created}}</span>
+              </div>
+              <div class="message my-message">
+                {{message.body}}
+              </div>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="chat-message clearfix">
+      {{textarea name="message-to-send" placeholder="Digite sua mensagem" rows="3" value=message}}
+      <button {{action 'sendMessage' message}}>Send</button>
+    </div>
+  </div>
+</div>
