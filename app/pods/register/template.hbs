@@ -1,0 +1,29 @@
+<div class="container profile--open">
+  <div class="profile">
+    <div class="title-login ">
+      <h2>Criar uma conta</h2>
+    </div>
+    <div class="profile__form">
+      <div class="profile__fields">
+        <div class="field">
+          {{input type="text" class="input" value=model.name}}
+          <label for="fieldUser" class="label">Nome</label>
+        </div>
+        <div class="field">
+          {{input type="text" class="input" value=model.email}}
+          <label for="fieldUser" class="label">Email</label>
+        </div>
+        <div class="field">
+          {{input type="password" class="input" value=model.password}}
+          <label for="fieldPassword" class="label">Senha</label>
+        </div>
+        <div class="profile__footer">
+          <button class="btn" {{action 'register'}}>Criar conta</button>
+        </div>
+      </div>
+     </div>
+     <div class="container-link-register">
+       {{link-to 'Voltar a tela de login' 'login' class="link-register"}}
+     </div>
+  </div>
+</div>

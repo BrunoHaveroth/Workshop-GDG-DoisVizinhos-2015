@@ -1,0 +1,25 @@
+<div class="container profile--open">
+  <div class="profile">
+    <div class="title-login ">
+      <h2>EMBER FIREBASE chat</h2>
+    </div>
+    <div class="profile__form">
+      <div class="profile__fields">
+        <div class="field">
+          {{input type="text" class="input" value=email}}
+          <label for="fieldUser" class="label">Email</label>
+        </div>
+        <div class="field">
+          {{input type="password" class="input" value=password}}
+          <label for="fieldPassword" class="label">Senha</label>
+        </div>
+        <div class="profile__footer">
+          <button class="btn" {{action 'login'}}>Entrar</button>
+        </div>
+      </div>
+     </div>
+     <div class="container-link-register">
+       {{link-to 'Criar uma conta' 'register' class="link-register"}}
+     </div>
+  </div>
+</div>
