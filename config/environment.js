@@ -3,12 +3,9 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-firebase',
-    podModulePrefix: 'ember-firebase/pods',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://ember-firebase-gdg.firebaseio.com/',
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,7 +40,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;

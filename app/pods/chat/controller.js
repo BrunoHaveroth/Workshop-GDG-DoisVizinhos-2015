@@ -9,10 +9,10 @@ export default Ember.Controller.extend({
         newMessage.set('body', message);
         newMessage.set('created', new Date());
         newMessage.save()
-        .then(()=> {
+        .then( ()=> {
           this.set('message', '');
           Ember.$('.chat-history').animate({
-            scrollTop: 2000
+            scrollTop: 2000000
           }, 500);
         });
       }
